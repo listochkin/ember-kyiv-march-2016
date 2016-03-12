@@ -6,6 +6,10 @@
   {{/each}}
 </ul>
 
-{{new-message-form onSend=(route-action 'sendMessage' model.room.id)}}
+{{#if session.isAuthenticated}}
+  {{new-message-form onSend=(route-action 'sendMessage' model.room.id)}}
+{{else}}
+  {{#link-to 'login'}}Login{{/link-to}}
+{{/if}}
 
 {{outlet}}

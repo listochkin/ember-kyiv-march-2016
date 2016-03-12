@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('room-list', { path: '/' }, function () {
     this.route('room', { path: 'room/:room_id', resetNamespace: true });
   });
+  this.route('login');
 });
 
 export default Router;

@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  session: Ember.inject.service(),
   model (params) {
     return Ember.RSVP.hash({
       room: this.store.findRecord('room', params.room_id),
@@ -11,6 +12,12 @@ export default Ember.Route.extend({
       }, (m) => m.get('roomId') == params.room_id)
     });
   },
+
+  setupController (controller, model) {
+    this._super(controller, model);
+    controller.set('session', this.get('session'));
+  },
+
   actions: {
     sendMessage (roomId, text) {
       const message = this.store.createRecord('message', { roomId, text });
