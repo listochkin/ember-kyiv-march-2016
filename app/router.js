@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('room-list', { path: '/' }, function () {
-    this.route('room', { path: ':room_name', resetNamespace: true });
+    this.route('room', { path: 'room/:room_name', resetNamespace: true });
   });
 });
 
