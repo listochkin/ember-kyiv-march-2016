@@ -22,7 +22,7 @@ module.exports = function(app) {
   });
 
   messagesRouter.post('/', function(req, res) {
-    console.log(req.body);
+    // FIXME: req.body is empty for some reason
     res.status(201).end();
   });
 
