@@ -6,6 +6,6 @@
   {{/each}}
 </ul>
 
-{{new-message-form onSend=(route-action 'sendMessage')}}
+{{new-message-form onSend=(route-action 'sendMessage' model.room.id)}}
 
 {{outlet}}

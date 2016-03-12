@@ -12,8 +12,9 @@ export default Ember.Route.extend({
     });
   },
   actions: {
-    sendMessage (text) {
-      return 'value from route ' + text;
+    sendMessage (roomId, text) {
+      const message = this.store.createRecord('message', { roomId, text });
+      return message.save();
     }
   }
 });

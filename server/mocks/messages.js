@@ -1,5 +1,10 @@
 /*jshint node:true*/
 
+// Find a route in Ember Inspector and press $E link
+//
+//     var room = $E.store.createRecord('message', { text: 'debug', roomId: 11});
+//     room.save();
+
 var MESSAGES = [
   { id: 21, type: 'messages', attributes: { 'room-id': 11, text: 'Hi' } },
   { id: 22, type: 'messages', attributes: { 'room-id': 11, text: 'Hello' } },
