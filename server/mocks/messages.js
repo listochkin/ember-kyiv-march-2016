@@ -1,9 +1,9 @@
 /*jshint node:true*/
 
 var MESSAGES = [
-  { id: 21, type: 'messages', attributes: { room_id: 11, text: 'Hi' } },
-  { id: 22, type: 'messages', attributes: { room_id: 11, text: 'Hello' } },
-  { id: 23, type: 'messages', attributes: { room_id: 11, text: 'Have a good day' } }
+  { id: 21, type: 'messages', attributes: { 'room-id': 11, text: 'Hi' } },
+  { id: 22, type: 'messages', attributes: { 'room-id': 11, text: 'Hello' } },
+  { id: 23, type: 'messages', attributes: { 'room-id': 11, text: 'Have a good day' } }
 ];
 
 module.exports = function(app) {

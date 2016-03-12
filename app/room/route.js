@@ -8,10 +8,7 @@ export default Ember.Route.extend({
         // query params fro the server API call
         // http://localhost:4200/api/messages?room_id=11
         room_id: params.room_id
-      }, (m) => {
-        console.log(m)
-        return m.get('roomId') == params.room_id
-      })
+      }, (m) => m.get('roomId') == params.room_id)
     });
   },
   actions: {
