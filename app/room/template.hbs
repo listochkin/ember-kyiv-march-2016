@@ -1,4 +1,10 @@
-ROOM
+<h4>{{model.room.name}}</h4>
+
+<ul>
+  {{#each model.messages as | message |}}
+  <li> {{message.text}} </li>
+  {{/each}}
+</ul>
 
 {{new-message-form onSend=(route-action 'sendMessage')}}
 
