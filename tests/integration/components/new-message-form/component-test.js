@@ -5,6 +5,23 @@ moduleForComponent('new-message-form', 'Integration | Component | new message fo
   integration: true
 });
 
+test('it sends text to an action', function(assert) {
+  // assert.expect(1);
+  const done = assert.async();
+
+  this.set('externalAction', (text) => {
+    assert.equal(text, 'TEST', 'Unexpected value were passed to an action: ' + text);
+    done();
+    return Promise.resolve();
+  });
+  this.render(hbs`{{new-message-form onSend=(action externalAction)}}`);
+
+  this.$('input[type="text"]').val('TEST');
+  this.$('input[type="text"]').change();
+
+  this.$('input[type="submit"]').click();
+});
+
 test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
