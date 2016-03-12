@@ -1,3 +1,13 @@
 <h3>Room List</h3>
 
+<ul>
+  {{#each model as |room index| }}
+    <li>
+      {{#link-to 'room' room.id }}
+        {{index}} - {{room.name}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+
 {{outlet}}
